@@ -17,28 +17,27 @@ UnPS-Short (Shortv4-2, the 2 signifying it was rewritten again with almost exact
 I coded this for simplicity (and it also gave me a great learning experiance with jQuery).
 
 USAGE:
-  If you want to shorten a link, simply put a link in the form and click shorten. You will be given two things: a clickable short link, and a password. The password is used to delete the link later if you choose
-  If you want to delete a link, put the whole link there (http://unps.us/?l=link) and click the delete link radio button located directly under the box. You will now have a place to put the password and click Delete. It will respond: "Deleted: [LINKID]"
-  If you want to report a link (This can be for several acceptable reasons outlined below) enter the whole link and click the report link radio button located directly under the box, to the right of the delete link button. You now have a text area to enter your complaint and click Report. It will respond: "Reported [LINK]. Please check back in a day or two"
+  - If you want to shorten a link, simply put a link in the form and click shorten. You will be given two things: a clickable short link, and a password. The password is used to delete the link later if you choose
+  - If you want to delete a link, put the whole link there (http://unps.us/?l=link) and click the delete link radio button located directly under the box. You will now have a place to put the password and click Delete. It will respond: "Deleted: [LINKID]"
+  - If you want to report a link (This can be for several acceptable reasons outlined below) enter the whole link and click the report link radio button located directly under the box, to the right of the delete link button. You now have a text area to enter your complaint and click Report. It will respond: "Reported [LINK]. Please check back in a day or two"
   
 Reporting Links:
-  There can be several reasons for reporting a link and these have to be manually sorted through and unacceptable reasons are simply rejected.
-  Also be aware, that you won't recieve a notification of what happened with the report (this might change with the addition of user accounts)
-  
-  Acceptable reasons:
-    You're a website owner and you don't appreciate people using link shorteners to direct to your site - Please give some way to verify this
-    The link is dead, either on the site it redirects to, or on the shortener itself
-    The link redirects to something against our TOS
-    The link contains viruses, malware, other bad stuff
-    The link is used to attempt to, or suceed in hacking any website (including ours)
-    Something not in the list below (This is on a per reason basis and can be rejected)
-  Unacceptable reasons:
-    You don't like the owner of the site it redirects to
-    You don't like me
-    You don't like my friends
-    You don't like my coding style/design
-    Profanity - Just be civil please
-    You don't like the content of the site, but it doesn't violate our TOS
-    Attempts to exploit any services we offer
-    Any language other than English (Sorry I just don't understand anything else)
+  - There can be several reasons for reporting a link and these have to be manually sorted through and unacceptable reasons are simply rejected.
+  - Also be aware, that you won't recieve a notification of what happened with the report (this might change with the addition of user accounts)
+  - Acceptable reasons:
+    - You're a website owner and you don't appreciate people using link shorteners to direct to your site - Please give some way to verify this
+    - The link is dead, either on the site it redirects to, or on the shortener itself
+    - The link redirects to something against our TOS
+    - The link contains viruses, malware, other bad stuff
+    - The link is used to attempt to, or suceed in hacking any website (including ours)
+    - Something not in the list below (This is on a per reason basis and can be rejected)
+  - Unacceptable reasons:
+    - You don't like the owner of the site it redirects to
+    - You don't like me
+    - You don't like my friends
+    - You don't like my coding style/design
+    - Profanity - Just be civil please
+     You don't like the content of the site, but it doesn't violate our TOS
+    - Attempts to exploit any services we offer
+    - Any language other than English (Sorry I just don't understand anything else)
     
