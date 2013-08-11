@@ -1,0 +1,197 @@
+.hidden { display: none; }
+.unhidden { display: block; }
+     
+body{
+  line-height:1;
+  font-family:"Lucida Grande", Arial, Helvetica, Sans-Serif;
+  background-color: #434C56;
+}
+      
+.navbar-wrapper {
+  position: relative;
+  z-index: 15;
+}
+
+.navbar-nav a{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+.navbar-nav a:hover{
+  background-color: #000;
+  color: #248;
+  webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 15px rgba(94, 125, 142, 0.9) !important;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 15px rgba(94, 125, 142, 0.9) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 15px rgba(94, 125, 142, 0.9) !important;
+}
+
+/* Set widths on the navbar form inputs since otherwise they're 100% wide */
+.navbar-form input[type="text"], .navbar-form input[type="password"] {
+  width: 140px;
+}
+
+.dropdown-menu{
+  opacity: 0.9;
+  background-color: rgb(94, 125, 142);  
+  filter: alpha(opacity=90);
+}
+
+#profile-pic{
+  max-height: 20px;
+  max-width: 20px;
+  border-radius: 20%;
+  -webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+#uname-dropdown{
+  color: rgb(96, 123, 152);
+}
+
+#uname-dropdown:hover{
+  color: rgb(152, 123, 96);
+}
+
+#logout-link:hover{
+  color: red;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -46px;
+  padding: 0 0 46px; 
+  background-image: -ms-linear-gradient(top, #3a3f44 0%, #434C56 100%);
+  background-image: -moz-linear-gradient(top, #3a3f44 0%, #434C56 100%);
+  background-image: -o-linear-gradient(top, #3a3f44 0%, #434C56 100%);
+  background-image: -webkit-linear-gradient(top, #3a3f44 0%, #434C56 100%);
+}
+
+#note{
+  color: #eee;
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 4px;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  width: 400px;
+}
+
+.form-shorten {
+  max-width: 600px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-shorten .form-shorten-heading{
+  margin-bottom: 10px;
+  color: #eee;
+}
+
+.form-shorten .radio-center .btn{
+  color: #eee;
+}
+
+.form-shorten input[type="text"], .form-shorten textarea{
+  position: relative;
+  font-size: 14px;
+  height: auto;
+  padding: 7px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form-shorten input[type="text"]:focus,{
+  z-index: 2;
+}
+
+.form-shorten input[type="text"], .form-shorten textarea{
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-shorten .radio-center input[type="radio"]:hover{
+  color:#200;
+}
+
+.form-shorten .btn-primary{
+  background-color: #333;
+  border: 1px solid #444;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+.form-shorten .btn-primary:hover{
+  background-color: #3c6190;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+#message{
+  float: center;
+  text-align: center;
+  color: #bbb;
+}
+
+#footer {
+  height: 46px;
+  background-color: #333;
+  color: #eee;
+}
+ 
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -17px;
+    margin-right: -20px;
+    padding-left: 17px;
+    padding-right: 20px;
+  }
+}
+
+#privacy-link, #tos-link, #reg-link{
+  float: right;
+  padding-right: 10px;
+  color: #eee;
+}
+
+#privacy-link:hover, #tos-link:hover, #reg-link:hover{
+  -webkit-box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
+     -moz-box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
+          box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
+  -webkit-transition: all 0.90s ease-in-out;
+  -moz-transition: all 0.90s ease-in-out;
+  -ms-transition: all 0.90s ease-in-out;
+  -o-transition: all 0.90s ease-in-out;
+}
+
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+  padding: 6px 0px 6px 6px;
+}
+
+h2 {
+  background: -webkit-linear-gradient(#eee, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
