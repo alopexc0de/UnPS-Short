@@ -15,6 +15,7 @@ The api does have a few functions that were meticulously coded and tested consta
 UnPS-Short (Shortv4-2, the 2 signifying it was rewritten again with almost exact backend code) is using a local, watered down version of the UnPSAPI to get around the fact that the api is currently not active.
 
 I coded this for simplicity (and it also gave me a great learning experiance with jQuery).
+(The key in the file process.php will not be a valid key when the api is introduced)
 
 USAGE:
   - If you want to shorten a link, simply put a link in the form and click shorten. You will be given two things: a clickable short link, and a password. The password is used to delete the link later if you choose
