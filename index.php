@@ -170,8 +170,8 @@
     <script type="text/javascript">
       jQuery(document).ready(function(){
         // When the page loads, we're gonna want to hide the shorten-password and report-details elements
-        $("#shorten-password").slideUp("slow");
-        $("#report-details").slideUp("slow");
+        $("#shorten-password").slideUp("fast");
+        $("#report-details").slideUp("fast");
         $('#link').focus();
 
         $('#error').fadeIn("slow");
@@ -199,6 +199,10 @@
           }
         });
       });
+
+      function copyToClipboard(text){
+        window.prompt ("Copy to clipboard: Ctrl+C, Enter (when closed I will open your link in a new tab)", text);
+      }
 
       // This is our AJAX - Thank you Wizzy <3
       $("#form-shorten").submit(function(event){

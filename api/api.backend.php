@@ -37,7 +37,7 @@ class api{
 		if($result = $sdb->query($sql)){
 			if($row = $result->fetch_assoc()){
 				$short = $row['shortlink'];
-				return "<div id=\"error\">Existing link: <a href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a></div>";
+				return "<div id=\"error\">Existing link: <a onclick=\"copyToClipboard('http://unps.us/?l=$short');\" href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a></div>";
 			}
 		}
 		if(checkRemoteFile($link) !== true) return "<div id=\"error\">Dead Link: $link</div>";
@@ -51,7 +51,7 @@ class api{
 		else: $sql = "INSERT INTO `links` (link, shortlink, dpass) VALUES ('$link', '$short', '$apikey')";
 		endif;
 		
-		if($result = $sdb->query($sql)): return "<div id=\"success\">Shortened: <a href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a><br />Your link deletion password (write this down): $dpass</div>";
+		if($result = $sdb->query($sql)): return "<div id=\"success\">Shortened: <a onclick=\"copyToClipboard('http://unps.us/?l=$short');\" href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a><br />Your link deletion password (write this down): $dpass</div>";
 		else: return '<div id="error">ERROR: ['.$sdb->error.']</div>';
 		endif;
 	}
