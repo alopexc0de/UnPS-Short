@@ -29,6 +29,9 @@
 		switch ($_POST['linkmod']){
     		case "shorten":
     			$short = sanitize($_POST['link']);
+                if(strpos($short, "http://") === false && strpos($short, "https://") === false){
+                    $short = "http://$short";
+                }
     			echo $unpsAPI->shorten($apidb, $key, $shortdb, $short);
         		break;
     		case "dellink":
