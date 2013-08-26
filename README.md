@@ -38,7 +38,7 @@ Reporting Links:
     - You don't like my friends
     - You don't like my coding style/design
     - Profanity - Just be civil please
-     You don't like the content of the site, but it doesn't violate our TOS
+    - You don't like the content of the site, but it doesn't violate our TOS
     - Attempts to exploit any services we offer
     - Any language other than English (Sorry I just don't understand anything else)
     
