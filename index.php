@@ -205,7 +205,7 @@
         event.preventDefault();
         event.stopPropagation();
         $.post("process.php?token=<?php echo $token; ?>", $(this).serialize(), function(data){
-          $("#message").html(data);
+          $("#message").hide().html(data).fadeIn("slow");
         });
       });
     </script>
