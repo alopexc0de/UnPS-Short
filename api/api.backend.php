@@ -51,7 +51,7 @@ class api{
 		else: $sql = "INSERT INTO `links` (link, shortlink, dpass) VALUES ('$link', '$short', '$apikey')";
 		endif;
 		
-		if($result = $sdb->query($sql)): return "Shortened: <a href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a><br />Your link deletion password (write this down): $dpass";
+		if($result = $sdb->query($sql)): return "<div id=\"success\">Shortened: <a href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a><br />Your link deletion password (write this down): $dpass</div>";
 		else: return '<div id="error">ERROR: ['.$sdb->error.']</div>';
 		endif;
 	}
@@ -81,7 +81,7 @@ class api{
 				if($apikey == $password){
 					$sql = "DELETE FROM `links` WHERE `shortlink` = '$link' AND `dpass` = '$apikey' LIMIT 1;";
 					if(!$result = $sdb->query($sql)) return '<div id="error">ERROR: ['.$sdb->error.'</div>]';
-					echo "Deleted: $link";
+					echo "<div id=\"success\">Deleted: $link</div>";
 					return;
 				}else{ return "<div id=\"error\">The password doesn't match. Delete $link aborted!</div>"; }
 			}
@@ -104,7 +104,7 @@ class api{
 
 		$sql = "INSERT INTO `manual` (time, apikey, ip, link, reason) VALUES(NOW(), '$apikey', '$ip', '$link', '$reason');";
 		if(!$result = $sdb->query($sql)) return '<div id="error">ERROR: ['.$sdb->error.']</div>';
-		return "Reported $link. Please check back in a day or two";
+		return "<div id=\"success\">Reported $link. Please check back in a day or two</div>";
 	}
 
 	// End Short
