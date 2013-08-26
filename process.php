@@ -6,7 +6,7 @@
     $catchVal = $catches[1];
 
     if(empty($_GET['token']) || $_GET['token'] != $_SESSION['token'] || empty($_POST[$catchid]) || $_POST[$catchid] != $catchVal){ 
-        die("Oh Noes! Something happened and I can't continue.<br />Please try again by using the form located at <a href=\"http://unps.us\">http://unps.us</a>.");
+        die("<div id=\"error\">Oh Noes! Something happened and I can't continue.<br />Please try again by using the form located at <a href=\"http://unps.us\">http://unps.us</a>.</div>");
     } 
 
 	require('api/api.backend.php');
