@@ -1,5 +1,15 @@
 <?php
-  // session_start(); // - Disabled for now because the user system isn't ready -
+  session_start(); 
+
+  // Generate a token on the fly. This should prevent POST spam attacks directly into process.php
+  $token = substr(number_format(time() * mt_rand(),0,'',''),0,10); 
+  $token = base_convert($token, 10, 36); 
+  $_SESSION['token'] = $token;
+
+  $catchid = substr(number_format(time() * mt_rand(),0,'',''),0,10);
+  $catchVal = hash('sha256', $catchid.mt_rand().time().substr(number_format(time() * mt_rand(),0,'',''),0,10));
+  $catchVal = base_convert($catchVal.$catchid, 10, 36);
+  $_SESSION['catch'] = $catchid.":".$catchVal;
 
   if(!empty($_GET['l'])){
     include('api/dbsettings.php');
@@ -33,8 +43,6 @@
     
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
     <link href="assets/css/elements.css?<?php echo time(); ?>" rel="stylesheet" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" />
-    <link rel="stylesheet" href="assets/css/jquery.countdown.css" />
     <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 
@@ -52,17 +60,17 @@
               </button>
               <div class="nav-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li><a class="active" href="http://unps-gama.info/about.php#logo"><img src="favicon.ico" style="max-height:20px;"></a></li>
+                  <li><a class="active" href="#"><img src="favicon.ico" style="max-height:20px;"></a></li>
                   <li><a class="active" href="http://unps-gama.info">Home</a></li>
-                  <li><a href="http://unps-gama.info/about.php">About</a></li>
-                  <li><a href="http://unps-gama.info/contact.php">Contact</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                       <li><a href="http://img.unps-gama.info">Image Host</a></li>
                       <li><a href="http://unps.us">Link Shortener</a></li>
                       <li><a href="http://api.unps.us">UnPS-API</a></li>
-                      <li><a href="http://b.unps.us">Site Blog</a></li>
+                      <li><a href="#">Site Blog</a></li>
                       <li><a href="https://twitter.com/UnPSDashGAMA">UnPS Twitter</a></li>
                       <li class="divider"></li>
                       <li class="nav-header">Programming Work</li>
@@ -120,10 +128,8 @@
         </div>
       </div>
 
-      <div class="container" style="float:center;">
-        <div id="countdown"></div>
-    
-        <div id="note"></div>
+      <div class="container" style="float:center;padding-bottom:7%;">
+        <p></p>
       </div>
 
       <div class="container">
@@ -131,7 +137,7 @@
           <h2 class="form-shorten-heading">Please give me a link to shorten...</h2>
           <input type="text" id="link" class="form-control" name="link" placeholder="http://" autofocus>
           <div id="shorten-password">
-            <input type="text" id="pass" class="form-control" name="password" placeholder="Password" autofocus>
+            <input type="text" id="pass" class="form-control" name="password" placeholder="Password">
           </div>
           <div id="report-details">
             <textarea name="report-details" id="report" class="form-control" placeholder="Reason for reporting this link"></textarea>
@@ -141,6 +147,7 @@
             <label class="btn" style="color:#eee;"><input type="radio" id="dellink" name="linkmod" value="dellink">Delete Link</label>
             <label class="btn" style="color:#eee;"><input type="radio" id="replink" name="linkmod" value="replink">Report Link</label>
           </div>
+          <input type="hidden" name="<?php echo $catchid; ?>" value="<?php echo $catchVal; ?>"/>
           <button class="btn btn-primary btn-block" id="short-button" type="submit">Shorten</button>
         </form>
         <div id="message">
@@ -148,25 +155,26 @@
       </div>
     </div>
 
-    <div id="footer" style="position:fixed; width:100%; padding:5px; bottom:7px; ">
+    <div id="footer" style="position:fixed; width:100%; padding:5px; bottom:2px;">
       <div class="container">
         <br /><p class="text-muted credit">
           Copyright &copy; 2012-2013 UnPS-GAMATechnologies - <a href="http://getbootstrap.com/">Bootstrap</a> is &copy; 2013 Twitter Inc.
-          <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="http://unps-gama.info/terms.php">Terms Of Service</a> <?php if(!isset($_SESSION['uname'])){ ?><a id="reg-link" href="http://unps-gama.info/register.php">Register</a> <?php } ?>
+          <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="http://unps-gama.info/terms.php">Terms Of Service</a> <?php if(!isset($_SESSION['uname'])){ ?><a id="reg-link" href="#">Register</a> <?php } ?>
         </p>
       </div>
     </div>
 
     <!-- Load the JS after the DOM so speed up load times -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="assets/js/jquery.countdown.js"></script>
-    <script src="assets/js/main.countdown.js"></script>
     <script src="assets/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript">
       jQuery(document).ready(function(){
         // When the page loads, we're gonna want to hide the shorten-password and report-details elements
         $("#shorten-password").slideUp("slow");
         $("#report-details").slideUp("slow");
+        $('#link').focus();
+
+        $('#error').fadeIn("slow");
       });
       $(function() { // Fairly messy. Changes submit button based on radio button and shows/hides shorten-password and report-details elements
         $("input[type=radio]").on('click', function(){
@@ -196,7 +204,7 @@
       $("#form-shorten").submit(function(event){
         event.preventDefault();
         event.stopPropagation();
-        $.post("process.php", $(this).serialize(), function(data){
+        $.post("process.php?token=<?php echo $token; ?>", $(this).serialize(), function(data){
           $("#message").html(data);
         });
       });
