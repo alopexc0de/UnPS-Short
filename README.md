@@ -17,6 +17,9 @@ UnPS-Short (Shortv4-2, the 2 signifying it was rewritten again with almost exact
 I coded this for simplicity (and it also gave me a great learning experiance with jQuery).
 (The key in the file process.php will not be a valid key when the api is introduced)
 
+UnPS-Short is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/
+
 USAGE:
   - If you want to shorten a link, simply put a link in the form and click shorten. You will be given two things: a clickable short link, and a password. The password is used to delete the link later if you choose
   - If you want to delete a link, put the whole link there (http://unps.us/?l=link) and click the delete link radio button located directly under the box. You will now have a place to put the password and click Delete. It will respond: "Deleted: [LINKID]"
