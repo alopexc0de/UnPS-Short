@@ -67,6 +67,7 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                      <li class="divider"></li>
                       <li><a href="http://img.unps-gama.info">Image Host</a></li>
                       <li><a href="http://unps.us">Link Shortener</a></li>
                       <li><a href="http://api.unps.us">UnPS-API</a></li>
@@ -77,11 +78,13 @@
                       <li><a href="https://github.com/alopexc0de">GitHub</a></li>
                       <li><a href="https://bitbucket.org/alopexc0de">Bitbucket</a></li>
                       <li><a href="http://p.unps.us">Projects</a></li>
+                      <li class="divider"></li>
                     </ul>
                   </li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Friends <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                      <li class="divider"></li>
                       <li class="nav-header"> c0de</li>
                       <li><a href="http://c0de.unps.us">Personal Blog</a></li>
                       <li><a href="https://facebook.com/alopexc0de">Facebook</a></li>
@@ -95,6 +98,7 @@
                       <li><a href="http://mc.doridian.de">Our Amazing Server Host</a></li>
                       <li><a href="http://furcast.fm">Awesome Furry Talk Show</a></li>
                       <li><a href="http://leonfox.net">Networking Guru</a></li>
+                      <li class="divider"></li>
                     </ul>
                   </li>
                 </ul>
@@ -116,11 +120,20 @@
                     </li>
                   </ul>
                 <?php }else{ ?>
-                  <form class="navbar-form form-inline pull-right" action="http://unps-gama.info/login.php" method="post">
-                    <input type="text" placeholder="Email" class="form-control">
-                    <input type="password" placeholder="Password" class="form-control">
-                    <button type="submit" class="btn" disabled="disabled">Sign in</button>
-                  </form>
+                  <ul class="nav navbar-nav" style="float:right;">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img style="max-height:18px;max-width:18px;" src="assets/images/user.png" /> Login <b class="caret"></b></a>
+                      <ul class="dropdown-menu" style="float:left;text-align:left;padding-left:8px;padding-right:8px;">
+                        <form class="navbar-form form-inline pull-right" action="http://unps-gama.info/login.php" method="post">
+                          <li style="padding-bottom:6px;"><input type="text" name="email" placeholder="Email" class="form-control" style="height: 40%;"></li>
+                          <li style="padding-bottom:6px;"><input type="password" name="pass" placeholder="Password" class="form-control" style="height: 40%;"></li>
+                          <li><button type="submit" name="signin" class="btn" style="width:100%;height: 40%;" disabled="disabled">Sign in</button></li>
+                          <li class="divider"></li>
+                          <li><button type="submit" name="signup" class="btn" style="width:100%;height: 40%;" disabled="disabled">Sign up</button></li>
+                        </form>
+                      </ul>
+                    </li>
+                  </ul>
                 <?php } ?>
               </div>
             </div>
@@ -159,7 +172,7 @@
       <div class="container">
         <br /><p class="text-muted credit">
           Copyright &copy; 2012-2013 UnPS-GAMATechnologies - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
-          <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="http://unps-gama.info/terms.php">Terms Of Service</a> <?php if(!isset($_SESSION['uname'])){ ?><a id="reg-link" href="#">Register</a> <?php } ?>
+          <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="http://unps-gama.info/terms.php">Terms Of Service</a>
         </p>
       </div>
     </div>
