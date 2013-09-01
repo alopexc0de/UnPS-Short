@@ -5,11 +5,16 @@ body{
   line-height:1;
   font-family:"Lucida Grande", Arial, Helvetica, Sans-Serif;
   background-color: #434C56;
+  background-image: url(http://localhost/bswork/assets/images/body.jpg);
 }
       
 .navbar-wrapper {
   position: relative;
   z-index: 15;
+}
+
+.navbar{
+  background: rgba(34, 34, 34, 0.5);
 }
 
 .navbar-nav a{
@@ -33,14 +38,17 @@ body{
 }
 
 .dropdown-menu{
-  opacity: 0.9;
-  background-color: rgb(94, 125, 142);  
-  filter: alpha(opacity=90);
+  background-color: rgba(34, 34, 34, 0.7);
+  color: #ffffff;
+}
+
+.dropdown-menu li a{
+  color: #ffffff;
 }
 
 #profile-pic{
-  max-height: 20px;
-  max-width: 20px;
+  max-height: 18px;
+  max-width: 18px;
   border-radius: 20%;
   -webkit-border-radius: 20%;
   -moz-border-radius: 20%;
@@ -70,10 +78,6 @@ body{
   height: 100%;
   margin: 0 auto -46px;
   padding: 0 0 46px; 
-  background-image: -ms-linear-gradient(top, #3a3f44 0%, #434C56 100%);
-  background-image: -moz-linear-gradient(top, #3a3f44 0%, #434C56 100%);
-  background-image: -o-linear-gradient(top, #3a3f44 0%, #434C56 100%);
-  background-image: -webkit-linear-gradient(top, #3a3f44 0%, #434C56 100%);
 }
 
 #note{
@@ -174,7 +178,7 @@ body{
 
 #footer {
   height: 46px;
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.5);
   color: #eee;
 }
  
