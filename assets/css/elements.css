@@ -5,7 +5,7 @@ body{
   line-height:1;
   font-family:"Lucida Grande", Arial, Helvetica, Sans-Serif;
   background-color: #434C56;
-  background-image: url(http://localhost/bswork/assets/images/body.jpg);
+  background-image: url(../images/body.jpg);
 }
       
 .navbar-wrapper {
