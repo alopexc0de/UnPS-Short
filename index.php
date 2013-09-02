@@ -91,6 +91,7 @@
                       <li><a href="skype:alopexlagopus-c0de?chat">C0de's Skype</a></li>
                       <li class="divider"></li>
                       <li class="nav-header"> Hosted Sites</li>
+                      <li><a href="http://tpht.unps.us">Twin Ports Hacker Terminal</a></li>
                       <li><a href="http://haruka.unps-gama.info">Haruka's Blog</a></li>
                       <li><a href="http://kitsu.unps-gama.info">Kitsu's Stuff</a></li>
                       <li class="divider"></li>
