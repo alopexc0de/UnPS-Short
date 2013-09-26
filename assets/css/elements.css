@@ -15,6 +15,9 @@ body{
 
 .navbar{
   background: rgba(34, 34, 34, 0.5);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
 .navbar-nav a{
@@ -32,18 +35,37 @@ body{
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 15px rgba(94, 125, 142, 0.9) !important;
 }
 
+#selected{
+  background: rgba(0, 0, 0, 0.275);
+  -webkit-box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
+     -moz-box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
+          box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
+}
+
 /* Set widths on the navbar form inputs since otherwise they're 100% wide */
 .navbar-form input[type="text"], .navbar-form input[type="password"] {
   width: 140px;
 }
 
 .dropdown-menu{
-  background-color: rgba(34, 34, 34, 0.7);
+  background-color: rgba(34, 34, 34, 0.775);
   color: #ffffff;
+  
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
 .dropdown-menu li a{
   color: #ffffff;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+  -webkit-transition: all 0.70s ease-in-out;
+  -moz-transition: all 0.70s ease-in-out;
+  -ms-transition: all 0.70s ease-in-out;
+  -o-transition: all 0.70s ease-in-out;
+  display: block;    
 }
 
 #profile-pic{
@@ -177,9 +199,13 @@ body{
 }
 
 #footer {
-  height: 46px;
+  height: 38px;
   background-color: rgba(51, 51, 51, 0.5);
   color: #eee;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
+     -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
+          box-shadow: 0 0 2px rgba(0, 0, 0, .8);
+  
 }
  
 @media (max-width: 767px) {
@@ -207,7 +233,7 @@ body{
   -o-transition: all 0.90s ease-in-out;
 }
 
-input[type=text], textarea {
+input[type=text], textarea, input[type=password] {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -216,9 +242,9 @@ input[type=text], textarea {
   border: 1px solid #DDDDDD;
 }
  
-input[type=text]:focus, textarea:focus {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-  border: 1px solid rgba(81, 203, 238, 1);
+input[type=text]:focus, textarea:focus, input[type=password]:focus {
+  box-shadow: 0 0 5px rgba(106, 90, 205, .5);
+  border: 1px solid rgba(106, 90, 205, 1);
   padding: 6px 0px 6px 6px;
 }
 
@@ -226,4 +252,26 @@ h2 {
   background: -webkit-linear-gradient(#eee, #aaa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.pre-scrollable{
+  max-height: 480px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .675);
+     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .675);
+          box-shadow: 0 0 8px rgba(0, 0, 0, .675);
+}
+
+.loginbox{
+  height: 28px;
+  max-height: 35px;
+  box-shadow: 0 0 5px rgba(106, 90, 205, .5);
+  border: 1px solid rgba(106, 90, 205, 1);
+  padding: 3px 0px 3px 3px;
+}
+
+.loginbtn{
+  height: 28px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.428561429;
 }
