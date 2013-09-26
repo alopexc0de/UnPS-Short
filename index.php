@@ -82,7 +82,7 @@
 
     <div id="footer" style="position:fixed; width:100%; padding:5px; bottom:2px;">
       <div class="container">
-        <br /><p class="text-muted credit" style="padding-top:8px;">
+        <br /><p class="text-muted credit" style="padding-bottom:10px;">
           Copyright &copy; 2012-2013 UnPS-GAMATechnologies - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
           <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="http://unps-gama.info/terms.php">Terms Of Service</a>
         </p>
