@@ -15,9 +15,6 @@ body{
 
 .navbar{
   background: rgba(34, 34, 34, 0.5);
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-          box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
 .navbar-nav a{
@@ -35,12 +32,7 @@ body{
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 15px rgba(94, 125, 142, 0.9) !important;
 }
 
-.navbar-nav a:focus{
-  background: rgba(0, 0, 0, 0.275) !important;
-}
-
 #selected{
-  background: rgba(0, 0, 0, 0.275);
   -webkit-box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
      -moz-box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
           box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
@@ -52,24 +44,12 @@ body{
 }
 
 .dropdown-menu{
-  background-color: rgba(34, 34, 34, 0.775);
+  background-color: rgba(34, 34, 34, 0.7);
   color: #ffffff;
-  
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-          box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
 .dropdown-menu li a{
   color: #ffffff;
-}
-
-ul.nav li.dropdown:hover > ul.dropdown-menu {
-  -webkit-transition: all 0.70s ease-in-out;
-  -moz-transition: all 0.70s ease-in-out;
-  -ms-transition: all 0.70s ease-in-out;
-  -o-transition: all 0.70s ease-in-out;
-  display: block;    
 }
 
 #profile-pic{
@@ -131,36 +111,27 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   color: #eee;
 }
 
-.form-shorten #radio-center .btn:checked{
-  border: 1px solid rgba(200, 200, 200, 0.64);
-  background-color: #1e3148;
-}
-
 .form-shorten input[type="text"], .form-shorten textarea{
   position: relative;
   font-size: 14px;
   padding: 7px;
-  margin-bottom: -1px;
-  box-shadow: 0;
-  border: 1px solid rgba(200, 200, 200, 0.64);
-  padding: 6px 0px 6px 6px;
-  resize: none;
-  
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.form-shorten input[type="text"]:focus, .form-shorten textarea:focus{
+.form-shorten input[type="text"]:focus,{
   z-index: 2;
-  border: 1px solid rgba(200, 200, 200, 0.64);
-  box-shadow: 0;
+}
+
+.form-shorten input[type="text"], .form-shorten textarea{
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .form-shorten .radio-center input[type="radio"]:hover{
-  background:#200;
+  color:#200;
 }
 
 .form-shorten .btn-primary{
@@ -170,19 +141,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
-  padding-bottom: 5px;
 }
 .form-shorten .btn-primary:hover{
   background-color: #3c6190;
   border: 1px solid rgba(81, 203, 238, 1);
-}
-
-.form-shorten input[type="radio"]{
-  display:none;
-}
-
-.form-shorten .fbtn{
-  width:58.47% !important;
 }
 
 #message{
@@ -221,13 +183,9 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 
 #footer {
-  height: 38px;
+  height: 46px;
   background-color: rgba(51, 51, 51, 0.5);
   color: #eee;
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
-     -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
-          box-shadow: 0 0 2px rgba(0, 0, 0, .8);
-  
 }
  
 @media (max-width: 767px) {
@@ -255,7 +213,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   -o-transition: all 0.90s ease-in-out;
 }
 
-input[type=text], textarea, input[type=password] {
+input[type=text], textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -264,9 +222,9 @@ input[type=text], textarea, input[type=password] {
   border: 1px solid #DDDDDD;
 }
  
-input[type=text]:focus, textarea:focus, input[type=password]:focus {
-  box-shadow: 0 0 5px rgba(200, 200, 200, 0.64);
-  border: 1px solid rgba(200, 200, 200, 0.64);
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
   padding: 6px 0px 6px 6px;
 }
 
@@ -274,26 +232,4 @@ h2 {
   background: -webkit-linear-gradient(#eee, #aaa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.pre-scrollable{
-  max-height: 480px;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .675);
-     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .675);
-          box-shadow: 0 0 8px rgba(0, 0, 0, .675);
-}
-
-.loginbox{
-  height: 28px;
-  max-height: 35px;
-  box-shadow: 0 0 5px rgba(106, 90, 205, .5);
-  border: 1px solid rgba(106, 90, 205, 1);
-  padding: 3px 0px 3px 3px;
-}
-
-.loginbtn{
-  height: 28px;
-  width: 100%;
-  font-size: 12px;
-  line-height: 1.428561429;
 }
