@@ -25,6 +25,10 @@
     }
   }
 
+  if(isset($_GET['newbg'])){
+    echo "<style>body{background-image: url('assets/images/newbody.jpg') !important;}</style>";
+  }
+
   function userpic($email){
     $default = "http://fox.gy/fCDIjceUvkk.png"; 
     $size = 20;
@@ -67,22 +71,24 @@
           <div id="report-details">
             <textarea name="report-details" id="report" class="form-control" placeholder="Reason for reporting this link"></textarea>
           </div>
-          <div id="radio-center" style="padding-left:16%;">
-            <label class="btn" style="color:#eee;"><input type="radio" id="shorten" name="linkmod" value="shorten" checked="checked">Shorten Link</label>
-            <label class="btn" style="color:#eee;"><input type="radio" id="dellink" name="linkmod" value="dellink">Delete Link</label>
-            <label class="btn" style="color:#eee;"><input type="radio" id="replink" name="linkmod" value="replink">Report Link</label>
-          </div>
+
           <input type="hidden" name="<?php echo $catchid; ?>" value="<?php echo $catchVal; ?>"/>
-          <button class="btn btn-primary btn-block" id="short-button" type="submit">Shorten</button>
+          <button class="btn btn-block btn-primary" id="short-button" type="submit">Shorten</button>
+
+          <div id="radio-center" style="padding-top:.078%;width:100%;padding-left:3%;" class="btn-group">
+            <label class="btn btn-primary" id="shortlab" style="color:#eee;"><input type="radio" id="shorten" name="linkmod" value="shorten" checked="checked">Shorten Link</label>
+            <label class="btn btn-primary" id="dellab" style="color:#eee;"><input type="radio" id="dellink" name="linkmod" value="dellink">Delete Link</label>
+            <label class="btn btn-primary" id="replab" style="color:#eee;"><input type="radio" id="replink" name="linkmod" value="replink">Report Link</label>
+          </div>
         </form>
         <div id="message">
         </div>
       </div>
     </div>
 
-    <div id="footer" style="position:fixed; width:100%; padding:5px; bottom:2px;">
+    <div id="footer" style="position:fixed;width:100%;bottom:2px;">
       <div class="container">
-        <br /><p class="text-muted credit" style="padding-bottom:10px;">
+        <br /><p class="text-muted credit" style="padding-bottom:20px;">
           Copyright &copy; 2012-2013 UnPS-GAMATechnologies - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
           <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="http://unps-gama.info/terms.php">Terms Of Service</a>
         </p>
@@ -90,51 +96,26 @@
     </div>
 
     <!-- Load the JS after the DOM so speed up load times -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript">
-      jQuery(document).ready(function(){
-        // When the page loads, we're gonna want to hide the shorten-password and report-details elements
-        $("#shorten-password").slideUp("fast");
-        $("#report-details").slideUp("fast");
-        $('#link').focus();
-
-        $('#error').fadeIn("slow");
-      });
-      $(function() { // Fairly messy. Changes submit button based on radio button and shows/hides shorten-password and report-details elements
-        $("input[type=radio]").on('click', function(){
-          if($('#shorten').is(':checked')){
-            $("#short-button").html('Shorten');
-            $("#report").val('');
-            $("#pass").val('');
-          }
-          if ($('#dellink').is(':checked')){
-            $("#shorten-password").slideDown("slow");
-            $("#short-button").html('Delete');
-            $("#report").val('');
-          }else{ 
-            $("#shorten-password").slideUp("slow");
-          }
-          if($('#replink').is(':checked')){
-            $("#report-details").slideDown("slow");
-            $("#short-button").html('Report');
-            $("#pass").val('');
-          }else{
-            $("#report-details").slideUp("slow");
-          }
-        });
-      });
-
-      function copyToClipboard(text){
-        window.prompt ("Copy to clipboard: Ctrl+C, Enter (when closed I will open your link in a new tab)", text);
-      }
-
+    <script type="text/javascript" language="JavaScript"  src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript"  src="assets/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" language="JavaScript"  src="assets/js/autoresize.jquery.js"></script> <!-- Credit to http://james.padolsey.com for this jQuery plugin -->
+    <script type="text/javascript" language="JavaScript" src="assets/js/unps.core.js"></script>
+    <script type="text/javascript" language="JavaScript">
       // This is our AJAX - Thank you Wizzy <3
       $("#form-shorten").submit(function(event){
         event.preventDefault();
         event.stopPropagation();
         $.post("process.php?token=<?php echo $token; ?>", $(this).serialize(), function(data){
           $("#message").hide().html(data).fadeIn("slow");
+          if($('#error').length){
+            $('#short-button').removeClass('btn-primary');
+            $('#short-button').removeClass('btn-success');
+            $('#short-button').addClass('btn-danger');
+          }else if($('#success').length){
+            $('#short-button').removeClass('btn-primary');
+            $('#short-button').removeClass('btn-danger');
+            $('#short-button').addClass('btn-success');
+          }
         });
       });
     </script>
