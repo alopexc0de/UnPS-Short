@@ -4,7 +4,7 @@ jQuery(document).ready(function(){
   $("#report-details").slideUp("fast");
   $('#link').focus();
 
-  $('#error').fadeIn("slow");
+  $('#error').fadeIn("fast");
   $('textarea').autoResize();
   $('#shortlab').addClass('fbtn');
 });

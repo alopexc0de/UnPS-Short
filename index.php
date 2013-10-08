@@ -106,7 +106,7 @@
         event.preventDefault();
         event.stopPropagation();
         $.post("process.php?token=<?php echo $token; ?>", $(this).serialize(), function(data){
-          $("#message").hide().html(data).fadeIn("slow");
+          $("#message").hide().html(data).fadeIn("fast");
           if($('#error').length){
             $('#short-button').removeClass('btn-primary');
             $('#short-button').removeClass('btn-success');
