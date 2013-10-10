@@ -171,10 +171,12 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
   padding-bottom: 5px;
+  text-shadow: 0.1em 0.1em 0.2em #222;
 }
 .form-shorten .btn-primary:hover{
   background-color: #3c6190;
   border: 1px solid rgba(81, 203, 238, 1);
+  text-shadow: 0.1em 0.1em 0.2em #222;
 }
 
 .form-shorten input[type="radio"]{
@@ -271,9 +273,10 @@ input[type=text]:focus, textarea:focus, input[type=password]:focus {
 }
 
 h2 {
-  background: -webkit-linear-gradient(#eee, #aaa);
+  background: -webkit-linear-gradient(#fff, #bbb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0.1em 0.1em 0.2em #222;
 }
 
 .pre-scrollable{
