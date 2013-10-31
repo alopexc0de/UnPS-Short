@@ -36,8 +36,8 @@
     return $grav_url;
   }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE>
+<html prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
   <head>
     <title>UnPS Link Shortener</title>
     
@@ -46,6 +46,7 @@
     <meta name="description" content="UnPS Link Shortener"/>
     <meta name="keywords" content="UnPS, GAMA, Shorten, Link"/>
     <meta name="author" content="David Todd"/>
+    <meta property="og:image" content="http://fox.gy/fCDIjceUvkk.png"/>
     
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
     <link href="assets/css/elements.css?<?php echo time(); ?>" rel="stylesheet" />
@@ -90,7 +91,7 @@
       <div class="container">
         <br /><p class="text-muted credit" style="padding-bottom:20px;">
           Copyright &copy; 2012-2013 UnPS-GAMATechnologies - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
-          <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="http://unps-gama.info/terms.php">Terms Of Service</a>
+          <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="terms.php">Terms Of Service</a>
         </p>
       </div>
     </div>
