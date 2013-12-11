@@ -92,22 +92,9 @@
           <?php }else{ ?>
             <ul class="nav navbar-nav" style="float:right;">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="login">
                   <img style="max-height:18px;max-width:18px;" src="assets/images/user.png" /> Login <b class="caret"></b>
                 </a>
-                <ul class="dropdown-menu" style="float:left;text-align:left;padding-left:8px;padding-right:8px;">
-                  <form class="navbar-form form-inline pull-right" action="http://unps-gama.info/login.php" method="post">
-                    <li style="padding-bottom:6px;">
-                      <input type="text" name="email" placeholder="Email" class="form-control loginbox" />
-                    </li>
-                    <li style="padding-bottom:6px;">
-                      <input type="password" name="pass" placeholder="Password" class="form-control loginbox" />
-                    </li>
-                    <li><button type="submit" name="signin" class="btn loginbtn" disabled="disabled">Sign in</button></li>
-                    <li class="divider"></li>
-                    <li><button type="submit" name="signup" class="btn loginbtn" disabled="disabled">Sign up</button></li>
-                  </form>
-                </ul>
               </li>
             </ul>
           <?php } ?>
