@@ -50,6 +50,11 @@
     
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
     <link href="assets/css/elements.css?<?php echo time(); ?>" rel="stylesheet" />
+
+    <!-- Vex CSS (http://github.hubspot.com/vex/) -->
+    <link href="../CDN/vex-1.3.5/css/vex.css" rel="stylesheet" />
+    <link href="../CDN/vex-1.3.5/css/vex-theme-os.css" rel="stylesheet" />
+
     <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 
@@ -82,8 +87,7 @@
             <label class="btn btn-primary" id="replab" style="color:#eee;"><input type="radio" id="replink" name="linkmod" value="replink">Report Link</label>
           </div>
         </form>
-        <div id="message">
-        </div>
+        <div id="message"></div>
       </div>
     </div>
 
@@ -101,6 +105,11 @@
     <script type="text/javascript" language="JavaScript"  src="assets/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" language="JavaScript"  src="assets/js/autoresize.jquery.js"></script> <!-- Credit to http://james.padolsey.com for this jQuery plugin -->
     <script type="text/javascript" language="JavaScript" src="assets/js/unps.core.js"></script>
+    
+    <!-- Vex stuff -->
+    <script src="../CDN/vex-1.3.5/js/vex.combined.min.js"></script>
+    <script src="assets/js/vex.js"></script>
+
     <script type="text/javascript" language="JavaScript">
       // This is our AJAX - Thank you Wizzy <3
       $("#form-shorten").submit(function(event){
