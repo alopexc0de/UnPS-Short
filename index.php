@@ -36,8 +36,8 @@
     return $grav_url;
   }
 ?>
-<!DOCTYPE>
-<html prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
   <head>
     <title>UnPS Link Shortener</title>
     
