@@ -13,6 +13,7 @@
   $catchVal = base_convert($catchVal.$catchid, 10, 36);
   $_SESSION['catch'] = $catchid.":".$catchVal;
 
+/* -- Hopefully depreciated, testing /?id
   if(!empty($_GET['l'])){
     include('api/dbsettings.php');
     $link = $shortdb->real_escape_string(strtolower(stripslashes(strip_tags($_GET['l']))));
@@ -21,6 +22,21 @@
       if($row = $result->fetch_assoc()){
         $link = $row['link'];
         header("location:$link");
+      }
+    }
+  }
+*/
+
+  if(!empty($_GET)){
+    foreach($_GET as $key=>$value){
+      include('api/dbsettings.php');
+      $link = $shortdb->real_escape_string(strtolower(stripslashes(strip_tags($key))));
+      $sql = "SELECT * FROM `links` WHERE `shortlink` = '$link' LIMIT 1;";
+      if($result = $shortdb->query($sql)){
+        if($row = $result->fetch_assoc()){
+          $link = $row['link'];
+          header("location:$link");
+        }
       }
     }
   }
