@@ -26,7 +26,7 @@ function checkRemoteFile($ip=null){
     curl_setopt($curlInit, CURLOPT_CONNECTTIMEOUT, 10);
     curl_setopt($curlInit, CURLOPT_HEADER, true);
     curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curlInit, CURLOPT_USERAGENT, 'UnPS-GAMATechnologies (UnPS WebQuery/4-2.8; +http://unps.us)');
+    curl_setopt($curlInit, CURLOPT_USERAGENT, 'UnPS-GAMATechnologies (UnPS WebQuery/4-2.9; +http://unps.us)');
     curl_setopt($curlInit, CURLOPT_HTTPHEADER, $header);
 
     $response = curl_exec($curlInit);
@@ -58,7 +58,7 @@ class api{
 		if($result = $sdb->query($sql)){
 			if($row = $result->fetch_assoc()){
 				$short = $row['shortlink'];
-				return "<div id=\"error\">Existing link: <a onclick=\"copyToClipboard('http://unps.us/?l=$short');\" href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a></div>";
+				return "<div id=\"error\">Existing link: <a onclick=\"copyToClipboard('http://unps.us/?$short');\" href=\"http://unps.us/?$short\" target=\"$short\">http://unps.us/?$short</a></div>";
 			}
 		}
 		if(checkRemoteFile($link) !== true) return "<div id=\"error\">Dead Link: $link</div>";
@@ -72,7 +72,7 @@ class api{
 		else: $sql = "INSERT INTO `links` (link, shortlink, dpass) VALUES ('$link', '$short', '$apikey')";
 		endif;
 		
-		if($result = $sdb->query($sql)): return "<div id=\"success\">Shortened: <a onclick=\"copyToClipboard('http://unps.us/?l=$short');\" href=\"http://unps.us/?l=$short\" target=\"$short\">http://unps.us/?l=$short</a><br />Your link deletion password (write this down): $dpass</div>";
+		if($result = $sdb->query($sql)): return "<div id=\"success\">Shortened: <a onclick=\"copyToClipboard('http://unps.us/?$short');\" href=\"http://unps.us/?$short\" target=\"$short\">http://unps.us/?$short</a><br />Your link deletion password (write this down): $dpass</div>";
 		else: return '<div id="error">ERROR: ['.$sdb->error.']</div>';
 		endif;
 	}
