@@ -13,7 +13,7 @@
   $catchVal = base_convert($catchVal.$catchid, 10, 36);
   $_SESSION['catch'] = $catchid.":".$catchVal;
 
-/* -- Hopefully depreciated, testing /?id
+  // This has been depreciated. Still here for backwards compatibility with existing links
   if(!empty($_GET['l'])){
     include('api/dbsettings.php');
     $link = $shortdb->real_escape_string(strtolower(stripslashes(strip_tags($_GET['l']))));
@@ -22,11 +22,12 @@
       if($row = $result->fetch_assoc()){
         $link = $row['link'];
         header("location:$link");
+        exit(); // Stop script execution to save on resources
       }
     }
   }
-*/
 
+  // New way to check for valid short links, two characters shorter than the if statement above
   if(!empty($_GET)){
     $key = key($_GET);
     include('api/dbsettings.php');
@@ -36,6 +37,7 @@
       if($row = $result->fetch_assoc()){
         $link = $row['link'];
         header("location:$link");
+        exit(); // Stop script execution to save on resources
       }
     }
   }
