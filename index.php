@@ -80,12 +80,13 @@
     <div id="wrap">
       <?php include('navbar.php'); ?>
 
-      <div class="container" style="float:center;padding-bottom:7%;">
+      <div class="container" style="float:center;padding-bottom:7%;">      
         <p></p>
       </div>
 
       <div class="container">
         <form class="form-shorten" id="form-shorten">
+
           <h2 class="form-shorten-heading">Please give me a link to shorten...</h2>
           <input type="text" id="link" class="form-control" name="link" placeholder="http://" autofocus>
           <div id="shorten-password">
@@ -103,8 +104,24 @@
             <label class="btn btn-primary" id="dellab" style="color:#eee;"><input type="radio" id="dellink" name="linkmod" value="dellink">Delete Link</label>
             <label class="btn btn-primary" id="replab" style="color:#eee;"><input type="radio" id="replink" name="linkmod" value="replink">Report Link</label>
           </div>
+
         </form>
-        <div id="message"></div>
+        <div id="message">
+          <div class="gab" align="center">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- unps.bottom -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6762927271223365"
+                 data-ad-slot="7270772487"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div>
+
+        
       </div>
     </div>
 
@@ -133,7 +150,7 @@
         event.preventDefault();
         event.stopPropagation();
         $.post("process.php?token=<?php echo $token; ?>", $(this).serialize(), function(data){
-          $("#message").hide().html(data).fadeIn("fast");
+          $("#message").hide().html(data+'<br /><div class="gab"></div>').fadeIn("fast");
           if($('#error').length){
             $('#short-button').removeClass('btn-primary');
             $('#short-button').removeClass('btn-success');
