@@ -123,7 +123,7 @@
 
         
         <div id="theLoader">
-          <div id="ajaxloader"></div><p id="loading">Loading...</a>
+          <div id="ajaxloader"></div><p id="loading">Loading...</p>
         </div>
       </div>
     </div>
@@ -150,7 +150,7 @@
     <script type="text/javascript" language="JavaScript">
       // This is our AJAX - Thank you Wizzy <3
       $("#form-shorten").submit(function(event){
-        $("#theLoader").fadeIn("Fast");
+        $("#theLoader").fadeIn("fast");
         event.preventDefault();
         event.stopPropagation();
         $.post("process.php?token=<?php echo $token; ?>", $(this).serialize(), function(data){
