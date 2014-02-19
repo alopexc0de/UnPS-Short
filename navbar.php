@@ -10,9 +10,30 @@
         <div class="nav-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="./"><img src="favicon.ico" style="max-height:18px;"><?php echo $appname; ?></a></li>
+            <li><a href="http://unps-gama.info">UnPS Home</a></li>
+            <li><a href="http://unps-gama.info/about">About</a></li>
+            <li><a href="http://unps-gama.info/contact">Contact</a></li>
 
-            <li><a href="http://unps.us" id="selected" target="_blank">Link Shortener</a></li>
-            <li><a href="http://api.unps.us" target="_blank">UnPS-API</a></li> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" id="selected" data-toggle="dropdown">Services <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+
+                <li><a href="http://img.unps-gama.info" target="_blank">Image Host</a></li>
+                <li><a href="http://unps.us" id="selected" target="_blank">Link Shortener</a></li>
+                <li><a href="http://api.unps.us" target="_blank">UnPS-API</a></li>
+                <li><a href="#">Site Blog</a></li>
+                <li><a href="https://twitter.com/UnPSDashGAMA" target="_blank">UnPS Twitter</a></li>
+
+                <li class="divider"></li>
+
+                <li class="nav-header">Programming Work</li>
+                <li><a href="https://github.com/alopexc0de" target="_blank">GitHub</a></li>
+                <li><a href="https://bitbucket.org/alopexc0de" target="_blank">Bitbucket</a></li>
+
+                <li class="divider"></li>
+              </ul>
+            </li>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Friends <b class="caret"></b></a>
@@ -20,10 +41,17 @@
                 <li class="divider"></li>
                       
                 <li class="nav-header"> c0de</li>
-                <li><a href="http://dfox.pw" target="_blank">Personal Blog</a></li>
-                <li><a href="https://twitter.com/UnPSDashGAMA" target="_blank">UnPS Twitter</a></li>
-                <li><a href="https://github.com/alopexc0de" target="_blank">GitHub</a></li>
-                <li><a href="mailto:c0de@unps.us">Email</a></li>
+                <li><a href="http://c0de.unps.us" target="_blank">Personal Blog</a></li>
+                <li><a href="https://facebook.com/alopexc0de" target="_blank">Facebook</a></li>
+                <li><a href="skype:alopexlagopus-c0de?chat" target="_blank">C0de's Skype</a></li>
+
+                <li class="divider"></li>
+
+                <li class="nav-header"> Hosted Sites</li>
+                <li><a href="http://tpht.unps.us" target="_blank">Twin Ports Hacker Terminal</a></li>
+                <li><a href="http://haruka.unps-gama.info" target="_blank">Haruka's Blog</a></li>
+                <li><a href="http://kitsu.unps-gama.info" target="_blank">Kitsu's Stuff</a></li>
+                <li><a href="http://hunyweav.us" target="_blank">HunyWeav.us</a></li>
 
                 <li class="divider"></li>
 
@@ -37,9 +65,7 @@
             </li>
           </ul>
 
-            <!-- User area - ->
-
-            Removed for now - No where near ready for implementation
+            <!-- User area -->
           <?php if(isset($_SESSION['uname'])){ ?>
             <ul class="nav navbar-nav" style="float:right;">
             <?php if($appname === "  Image Host"){ ?>
@@ -71,7 +97,7 @@
                 </a>
               </li>
             </ul>
-          <?php } ?> -->
+          <?php } ?>
       </div>
     </div>
   </div>
