@@ -80,9 +80,6 @@
     <div id="wrap">
       <?php include('navbar.php'); ?>
 
-      <div class="container" style="float:center;padding-bottom:7%;">      
-        <p></p>
-      </div>
 
       <div class="container">
         <form class="form-shorten" id="form-shorten">
