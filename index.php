@@ -128,11 +128,11 @@
       </div>
     </div>
 
-    <div id="footer" style="position:fixed;width:100%;bottom:2px;">
+    <div id="footer" style="position:absolute;width:100%;bottom:1%;">
       <div class="container">
-        <br /><p class="text-muted credit" style="padding-bottom:20px;">
-          Copyright &copy; 2012-2013 UnPS-GAMATechnologies - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
-          <a id="privacy-link" href="http://unps-gama.info/privacy.php">Privacy Policy</a> <a id="tos-link" href="terms.php">Terms Of Service</a>
+        <p class="text-muted credit" style="padding-bottom:2.3%;">
+          Copyright &copy; 2014 Unified Programming Solutions - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
+          <a id="tos-link" href="terms.php">Terms Of Service</a>
         </p>
       </div>
     </div>
