@@ -117,10 +117,9 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 
 .form-shorten {
-  max-width: 51%;
+  max-width: 600px;
   padding: 15px;
   margin: 0 auto;
-  padding-top: 20%;
 }
 
 .form-shorten .form-shorten-heading{
