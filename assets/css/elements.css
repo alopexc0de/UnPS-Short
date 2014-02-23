@@ -287,7 +287,7 @@ h2 {
   max-width: 570px;
 }
 
-#theLoader{ display: none; }
+/*#theLoader{ display: none; }*/
 
 #loading{
   position: relative;
@@ -304,13 +304,11 @@ h2 {
   left: 50%;
   top: 15%;
   margin: 0 0 0 -15px;
-  border: 8px solid #fff;
-  border-right-color: transparent;
+  border: 6px solid #fff;
+  border-right: none;
   border-top: 0 none;
   border-bottom: 0 none;
-  border-left: 1 none;
-  border-radius: 50%;
-  box-shadow: 0 0 25px 2px #eee;
+  border-radius: 100%;
   -webkit-animation: spin 1s linear infinite;
   -moz-animation: spin 1s linear infinite;
   -ms-animation: spin 1s linear infinite;
