@@ -62,7 +62,7 @@ class api{
 			}
 		}
 		if(checkRemoteFile($link) !== true) return "<div id=\"error\">Dead Link: $link</div>";
-		$short = substr(number_format(time() * mt_rand(),0,'',''),0,10); 
+		$short = substr(number_format(time() * mt_rand(),0,'',''),0,5); 
 		$short = base_convert($short, 10, 36); 
 		
 		$dpass = substr(number_format(time() * mt_rand(),0,'',''),0,10); 
