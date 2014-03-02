@@ -54,7 +54,7 @@
     <meta name="author" content="David Todd"/>
     <meta property="og:image" content="http://fox.gy/fCDIjceUvkk.png"/>
     
-    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <link href="assets/css/elements.css?<?php echo time(); ?>" rel="stylesheet" />
 
     <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
@@ -77,9 +77,6 @@
           <div id="shorten-password">
             <input type="text" id="pass" class="form-control" name="password" placeholder="Password">
           </div>
-          <div id="report-details">
-            <textarea name="report-details" id="report" class="form-control" placeholder="Reason for reporting this link"></textarea>
-          </div>
 
           <input type="hidden" name="<?php echo $catchid; ?>" value="<?php echo $catchVal; ?>"/>
           <button class="btn btn-block btn-primary" id="short-button" type="submit">Shorten</button>
@@ -87,7 +84,6 @@
           <div id="radio-center" style="padding-top:.078%;width:100%;padding-left:3%;" class="btn-group">
             <label class="btn btn-primary" id="shortlab" style="color:#eee;"><input type="radio" id="shorten" name="linkmod" value="shorten" checked="checked">Shorten Link</label>
             <label class="btn btn-primary" id="dellab" style="color:#eee;"><input type="radio" id="dellink" name="linkmod" value="dellink">Delete Link</label>
-            <label class="btn btn-primary" id="replab" style="color:#eee;"><input type="radio" id="replink" name="linkmod" value="replink">Report Link</label>
           </div>
 
         </form>
@@ -110,8 +106,7 @@
 
     <!-- Load the JS after the DOM so speed up load times -->
     <script type="text/javascript" language="JavaScript"  src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript" language="JavaScript"  src="assets/bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" language="JavaScript"  src="assets/js/autoresize.jquery.js"></script> <!-- Credit to http://james.padolsey.com for this jQuery plugin -->
+    <script type="text/javascript" language="JavaScript"  src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" language="JavaScript" src="assets/js/unps.core.js"></script>
     
     <script type="text/javascript" language="JavaScript">

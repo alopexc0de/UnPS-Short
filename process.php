@@ -45,12 +45,6 @@
                 $link = $link[1];
     			echo $unpsAPI->delShort($apidb, $key, $shortdb, $link, $password);
         		break;
-    		case "replink":
-    			if(empty($_POST['report-details'])) die("<div id=\"error\">Something went wrong somewhere, but I can't find the reason for reporting this link</div>");
-    			$link = sanitize($_POST['link']);
-    			$details = sanitize($_POST['report-details']);
-    			echo $unpsAPI->reportLink($apidb, $key, $shortdb, $link, $details);
-        		break;
         	default:
         		die("<div id=\"error\">I don't know what you want to do... [-Check linkmod-]</div>");
 	   }  
