@@ -76,6 +76,7 @@
           <input type="text" id="link" class="form-control" name="link" placeholder="http://" autofocus>
 
           <input type="hidden" name="<?php echo $catchid; ?>" value="<?php echo $catchVal; ?>"/>
+          <input type="hidden" name="linkmod" value="shorten"/>
           <button class="btn btn-block btn-primary" id="short-button" type="submit">Shorten</button>
 
         </form>
@@ -87,10 +88,10 @@
       </div>
     </div>
 
-    <div id="footer" style="position:absolute;width:100%;bottom:1%;">
+    <div id="footer" style="position:absolute;width:100%;bottom:1px;">
       <div class="container">
-        <p class="text-muted credit" style="padding-bottom:2.3%;">
-          Copyright &copy; 2014 Unified Programming Solutions - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
+        <p class="text-muted credit">
+          Copyright &copy; 2014 Unified Programming Solutions - Version 4-2.8.5 - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
           <a id="tos-link" href="terms.php">Terms Of Service</a>
         </p>
       </div>
