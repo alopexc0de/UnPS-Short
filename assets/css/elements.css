@@ -46,11 +46,6 @@ body{
           box-shadow: 0 8px 6px -6px rgba(94, 125, 142, 0.9);
 }
 
-/* Set widths on the navbar form inputs since otherwise they're 100% wide */
-.navbar-form input[type="text"], .navbar-form input[type="password"] {
-  width: 140px;
-}
-
 .dropdown-menu{
   background-color: rgba(34, 34, 34, 0.775);
   color: #ffffff;
@@ -70,32 +65,6 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   -ms-transition: all 0.70s ease-in-out;
   -o-transition: all 0.70s ease-in-out;
   display: block;    
-}
-
-#profile-pic{
-  max-height: 18px;
-  max-width: 18px;
-  border-radius: 20%;
-  -webkit-border-radius: 20%;
-  -moz-border-radius: 20%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-}
-
-#uname-dropdown{
-  color: rgb(96, 123, 152);
-}
-
-#uname-dropdown:hover{
-  color: rgb(152, 123, 96);
-}
-
-#logout-link:hover{
-  color: red;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
 #wrap {
@@ -124,7 +93,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 .form-shorten .form-shorten-heading{
   margin-bottom: 10px;
-  color: #eee;
+  color: #bbb;
 }
 
 .form-shorten .radio-center .btn{
@@ -253,32 +222,7 @@ input[type=text]:focus, textarea:focus, input[type=password]:focus {
 }
 
 h2 {
-  background: -webkit-linear-gradient(#fff, #bbb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-shadow: 0.1em 0.1em 0.2em #222;
-}
-
-.pre-scrollable{
-  max-height: 480px;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .675);
-     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .675);
-          box-shadow: 0 0 8px rgba(0, 0, 0, .675);
-}
-
-.loginbox{
-  height: 28px;
-  max-height: 35px;
-  box-shadow: 0 0 5px rgba(106, 90, 205, .5);
-  border: 1px solid rgba(106, 90, 205, 1);
-  padding: 3px 0px 3px 3px;
-}
-
-.loginbtn{
-  height: 28px;
-  width: 100%;
-  font-size: 12px;
-  line-height: 1.428561429;
 }
 
 /*#theLoader{ display: none; }*/
