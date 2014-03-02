@@ -74,9 +74,6 @@
 
           <h2 class="form-shorten-heading">Please give me a link to shorten...</h2>
           <input type="text" id="link" class="form-control" name="link" placeholder="http://" autofocus>
-          <div id="shorten-password">
-            <input type="text" id="pass" class="form-control" name="password" placeholder="Password">
-          </div>
 
           <input type="hidden" name="<?php echo $catchid; ?>" value="<?php echo $catchVal; ?>"/>
           <button class="btn btn-block btn-primary" id="short-button" type="submit">Shorten</button>
