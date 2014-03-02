@@ -81,11 +81,6 @@
           <input type="hidden" name="<?php echo $catchid; ?>" value="<?php echo $catchVal; ?>"/>
           <button class="btn btn-block btn-primary" id="short-button" type="submit">Shorten</button>
 
-          <div id="radio-center" style="padding-top:.078%;width:100%;padding-left:3%;" class="btn-group">
-            <label class="btn btn-primary" id="shortlab" style="color:#eee;"><input type="radio" id="shorten" name="linkmod" value="shorten" checked="checked">Shorten Link</label>
-            <label class="btn btn-primary" id="dellab" style="color:#eee;"><input type="radio" id="dellink" name="linkmod" value="dellink">Delete Link</label>
-          </div>
-
         </form>
         <div id="message">
           <div id="theLoader">
@@ -107,7 +102,17 @@
     <!-- Load the JS after the DOM so speed up load times -->
     <script type="text/javascript" language="JavaScript"  src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript" language="JavaScript"  src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" language="JavaScript" src="assets/js/unps.core.js"></script>
+
+    <script type="text/javascript" language="JavaScript">
+      jQuery(document).ready(function(){
+        $('#link').focus();
+        $('#error').fadeIn("fast");
+      });
+
+      function copyToClipboard(text){
+        window.prompt ("Copy to clipboard: Ctrl+C, Enter (when closed I will open your link in a new tab)", text);
+      }
+    </script>
     
     <script type="text/javascript" language="JavaScript">
       // This is our AJAX - Thank you Wizzy <3

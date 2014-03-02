@@ -34,17 +34,6 @@
                 }
     			echo $unpsAPI->shorten($apidb, $key, $shortdb, $short);
         		break;
-    		case "dellink":
-    			if(empty($_POST['password'])) die("<div id=\"error\">Something went wrong somewhere, but there's no password here</div>");
-    			$link = sanitize($_POST['link']);
-    			$password = sanitize($_POST['password']);
-                $link = explode("=", $link);
-                if(count($link) != 2){
-                    die("<div id=\"error\">I'm sorry, but something went wrong... did you paste the whole link?</div>");
-                }
-                $link = $link[1];
-    			echo $unpsAPI->delShort($apidb, $key, $shortdb, $link, $password);
-        		break;
         	default:
         		die("<div id=\"error\">I don't know what you want to do... [-Check linkmod-]</div>");
 	   }  
