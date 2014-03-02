@@ -107,25 +107,10 @@
 
         </form>
         <div id="message">
-          <div class="gab" align="center">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- unps.bottom -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6762927271223365"
-                 data-ad-slot="7270772487"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+          <div id="theLoader">
+            <div id="ajaxloader"></div><p id="loading">Loading...</p>
           </div>
         </div>
-
-        
-        <div id="theLoader">
-          <div id="ajaxloader"></div><p id="loading">Loading...</p>
-        </div>
-      </div>
     </div>
 
     <div id="footer" style="position:absolute;width:100%;bottom:1%;">

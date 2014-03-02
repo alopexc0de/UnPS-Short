@@ -66,7 +66,7 @@ class api{
 		$short = base_convert($short, 10, 36); 
 		
 		$dpass = substr(number_format(time() * mt_rand(),0,'',''),0,10); 
-		$dpass = base_convert($short.$dpass, 10, 36); 
+		$dpass = base_convert($short.$dpass, 10, 36);
 
 		if($dpass != null): $sql = "INSERT INTO `links` (link, shortlink, dpass) VALUES ('$link', '$short', '$dpass')";
 		else: $sql = "INSERT INTO `links` (link, shortlink, dpass) VALUES ('$link', '$short', '$apikey')";
