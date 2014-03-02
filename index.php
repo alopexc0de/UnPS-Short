@@ -41,17 +41,6 @@
       }
     }
   }
-
-  if(isset($_GET['newbg'])){
-    echo "<style>body{background-image: url('assets/images/newbody.jpg') !important;}</style>";
-  }
-
-  function userpic($email){
-    $default = "http://fox.gy/fCDIjceUvkk.png"; 
-    $size = 20;
-    $grav_url = "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=".urlencode($default)."&s=".$size;
-    return $grav_url;
-  }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
