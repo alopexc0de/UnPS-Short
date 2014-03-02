@@ -68,10 +68,6 @@
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen" />
     <link href="assets/css/elements.css?<?php echo time(); ?>" rel="stylesheet" />
 
-    <!-- Vex CSS (http://github.hubspot.com/vex/) -->
-    <link href="../CDN/vex-1.3.5/css/vex.css" rel="stylesheet" />
-    <link href="../CDN/vex-1.3.5/css/vex-theme-os.css" rel="stylesheet" />
-
     <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 
@@ -111,6 +107,7 @@
             <div id="ajaxloader"></div><p id="loading">Loading...</p>
           </div>
         </div>
+      </div>
     </div>
 
     <div id="footer" style="position:absolute;width:100%;bottom:1%;">
@@ -128,10 +125,6 @@
     <script type="text/javascript" language="JavaScript"  src="assets/js/autoresize.jquery.js"></script> <!-- Credit to http://james.padolsey.com for this jQuery plugin -->
     <script type="text/javascript" language="JavaScript" src="assets/js/unps.core.js"></script>
     
-    <!-- Vex stuff -->
-    <script src="../CDN/vex-1.3.5/js/vex.combined.min.js"></script>
-    <script src="assets/js/vex.js"></script>
-
     <script type="text/javascript" language="JavaScript">
       // This is our AJAX - Thank you Wizzy <3
       $("#form-shorten").submit(function(event){
