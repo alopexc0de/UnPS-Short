@@ -285,9 +285,9 @@ h2 {
 
 #loading{
   position: relative;
-  left: 53.6%;
+  left: -9.8%;
   top: 15%;
-  margin: -22px 0 0 -15px;
+  margin: -22px 0 0 0;
   color: #aaa;
 }
 
@@ -295,7 +295,7 @@ h2 {
   position: relative;
   width: 30px;
   height: 30px;
-  left: 50%;
+  left: 34%;
   top: 15%;
   margin: 0 0 0 -15px;
   border: 6px solid #fff;
