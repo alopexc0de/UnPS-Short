@@ -229,7 +229,7 @@ h2 {
 
 #loading{
   position: relative;
-  left: -9.8%;
+  left: -10%;
   top: 15%;
   margin: -22px 0 0 0;
   color: #aaa;
@@ -239,7 +239,7 @@ h2 {
   position: relative;
   width: 30px;
   height: 30px;
-  left: 34%;
+  left: 32%;
   top: 15%;
   margin: 0 0 0 -15px;
   border: 6px solid #fff;
