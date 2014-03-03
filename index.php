@@ -91,7 +91,7 @@
     <div id="footer" style="position:absolute;width:100%;bottom:1px;">
       <div class="container">
         <p class="text-muted credit">
-          Copyright &copy; 2014 Unified Programming Solutions - Version 4-2.8.5 - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
+          Copyright &copy; 2014 Unified Programming Solutions - Version 4-2.8.6 - Fork me on <a href="https://github.com/alopexc0de/UnPS-Short">GitHub</a>
           <a id="tos-link" href="terms.php">Terms Of Service</a>
         </p>
       </div>
