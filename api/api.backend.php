@@ -36,8 +36,6 @@ function checkRemoteFile($ip=null){
     return false;
 }
 
-include('hashpass.php');
-
 class api{
 	// Begin Short
 	function shorten($apidb, $apikey, $sdb, $link, $dpass=null){
