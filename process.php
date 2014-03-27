@@ -12,8 +12,6 @@
 	require('api/api.backend.php');
 	require('api/dbsettings.php');
 
-    $key = '9a211e90b0a0570ed33e47428231e702af47b6f54fb347960f661184e063a1d0'; // KEEP THIS PRIVATE! This is the only thing that authenticates the application
-
 	function sanitize($input){
 		if ($input == null) die("<div id=\"error\">Sanatize() - No Input Provided, Aborting</div>");
 		include('api/dbsettings.php');
