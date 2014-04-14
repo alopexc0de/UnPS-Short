@@ -36,6 +36,8 @@ function checkRemoteFile($ip=null){
     return false;
 }
 
+include('hashpass.php');
+
 class api{
 	require_once('dbsettings.php');
 
