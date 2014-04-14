@@ -13,18 +13,33 @@
   $catchVal = base_convert($catchVal.$catchid, 10, 36);
   $_SESSION['catch'] = $catchid.":".$catchVal;
 
-  require('api/api.backend.php');
-  $api = new api();
-
   // This has been depreciated. Still here for backwards compatibility with existing links
   if(!empty($_GET['l'])){
-    $api->resLink($_GET['l']);
+    include('api/dbsettings.php');
+    $link = $shortdb->real_escape_string(strtolower(stripslashes(strip_tags($_GET['l']))));
+    $sql = "SELECT * FROM `links` WHERE `shortlink` = '$link' LIMIT 1;";
+    if($result = $shortdb->query($sql)){
+      if($row = $result->fetch_assoc()){
+        $link = $row['link'];
+        header("location:$link");
+        exit(); // Stop script execution to save on resources
+      }
+    }
   }
 
   // New way to check for valid short links, two characters shorter than the if statement above
   if(!empty($_GET)){
     $key = key($_GET);
-    $api->resLink($key);
+    include('api/dbsettings.php');
+    $link = $shortdb->real_escape_string(strtolower(stripslashes(strip_tags($key))));
+    $sql = "SELECT * FROM `links` WHERE `shortlink` = '$link' LIMIT 1;";
+    if($result = $shortdb->query($sql)){
+      if($row = $result->fetch_assoc()){
+        $link = $row['link'];
+        header("location:$link");
+        exit(); // Stop script execution to save on resources
+      }
+    }
   }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -5,6 +5,10 @@
     $catchid = $catches[0];
     $catchVal = $catches[1];
 
+    if(empty($_GET['token']) || $_GET['token'] != $_SESSION['token'] || empty($_POST[$catchid]) || $_POST[$catchid] != $catchVal){ 
+        die("<div id=\"error\">Oh Noes! Something happened and I can't continue.<br />Please try again by using the form located at <a href=\"http://unps.us\">http://unps.us</a>.</div>");
+    } 
+
 	require('api/api.backend.php');
 	require('api/dbsettings.php');
 
@@ -22,16 +26,13 @@
 	$unpsAPI = new api();
 
 	if(!empty($_POST['link']) && !empty($_POST['linkmod'])){
-        if(empty($_GET['token']) || $_GET['token'] != $_SESSION['token'] || empty($_POST[$catchid]) || $_POST[$catchid] != $catchVal){ 
-            die("<div id=\"error\">Oh Noes! Something happened and I can't continue.<br />Please try again by using the form located at <a href=\"http://unps.us\">http://unps.us</a>.</div>");
-        } 
 		switch ($_POST['linkmod']){
     		case "shorten":
     			$short = sanitize($_POST['link']);
                 if(strpos($short, "http://") === false && strpos($short, "https://") === false){
                     $short = "http://$short";
                 }
-    			echo $unpsAPI->shorten($short);
+    			echo $unpsAPI->shorten($apidb, $key, $shortdb, $short);
         		break;
         	default:
         		die("<div id=\"error\">I don't know what you want to do... [-Check linkmod-]</div>");
