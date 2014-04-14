@@ -37,8 +37,10 @@ function checkRemoteFile($ip=null){
 }
 
 class api{
+	require_once('dbsettings.php');
+
 	// Begin Short
-	function shorten($apidb, $apikey, $sdb, $link, $dpass=null){
+	function shorten($link, $dpass=null){
 		$apisql = "SELECT * FROM `users` WHERE `key` = '$apikey' LIMIT 1";
 		if(!$result = $apidb->query($apisql)) return 'ERROR: ['.$apidb->error.']';
 		if($row = $result->fetch_assoc()){
@@ -125,6 +127,39 @@ class api{
 		if(!$result = $sdb->query($sql)) return '<div id="error">ERROR: ['.$sdb->error.']</div>';
 		return "<div id=\"success\">Reported $link. Please check back in a day or two</div>";
 	}
+
+	function trackLink($apidb, $apikey, $sdb, $linkid){
+		$apisql = "SELECT * FROM `users` WHERE `key` = '$apikey' LIMIT 1;";
+		if(!$result = $apidb->query($apisql)) return 'ERROR: ['.$apidb->error.']';
+		if($row = $result->fetch_assoc()){
+			$canshort = $row['short'];
+			$name = $row['name'];
+			
+			$ip = $_SERVER['REMOTE_ADDR'];
+
+			$apisql = "INSERT INTO `apiuse` (time, name, apikey, ip, type, allowed, misc) VALUES (NOW(), '$name', '$apikey', '$ip', 'Track Link', '$canshort', '$link')";
+			if(!$result = $apidb->query($apisql)) return 'ERROR: ['.$apidb->error.']';
+		}
+		if($canshort != 1) return '<div id="error">Failed to report</div>';
+
+		$sql = "INSERT INTO `tracking` (time, apikey, ip, linkid) VALUES (NOW(), '$apikey', '$ip', '$linkid')";
+		if(!$result = $sdb->query($sql)): die( 'ERROR: ['.$sdb->error.']');
+		else: die("SUCCESS");
+		endif;
+	}
+
+	function resLink($link){
+        $link = sanitize($link);
+        $sql = "SELECT * FROM `links` WHERE `shortlink` = '$link' LIMIT 1;";
+        if($result = $shortdb->query($sql)){
+            if($row = $result->fetch_assoc()){
+                $link = $row['link'];
+                trackLink($apidb, $key, $sdb, $link);
+                header("location:$link");
+                exit(); // Stop script execution to save on resources
+            }
+        }
+    }
 
 	// End Short
 }
