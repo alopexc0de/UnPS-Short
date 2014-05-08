@@ -17,6 +17,7 @@
   if(!empty($_GET['l'])){
     include('api/dbsettings.php');
     $link = $shortdb->real_escape_string(strtolower(stripslashes(strip_tags($_GET['l']))));
+    $link = str_replace('/', '', $link);
     $sql = "SELECT * FROM `links` WHERE `shortlink` = '$link' LIMIT 1;";
     if($result = $shortdb->query($sql)){
       if($row = $result->fetch_assoc()){
@@ -32,6 +33,7 @@
     $key = key($_GET);
     include('api/dbsettings.php');
     $link = $shortdb->real_escape_string(strtolower(stripslashes(strip_tags($key))));
+    $link = str_replace('/', '', $link);
     $sql = "SELECT * FROM `links` WHERE `shortlink` = '$link' LIMIT 1;";
     if($result = $shortdb->query($sql)){
       if($row = $result->fetch_assoc()){
