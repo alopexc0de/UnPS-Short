@@ -56,7 +56,7 @@ class api{
 		if($result = $sdb->query($sql)){
 			if($row = $result->fetch_assoc()){
 				$short = $row['shortlink'];
-				return "<div id=\"error\">Existing link: <a onclick=\"copyToClipboard('http://unps.us/?$short');\" href=\"http://unps.us/?$short\" target=\"$short\">http://unps.us/?$short</a></div>";
+				return "<div id=\"error\">Existing link: <a onclick=\"copyToClipboard('http://unps.us/$short');\" href=\"http://unps.us/$short\" target=\"$short\">http://unps.us/?$short</a></div>";
 			}
 		}
 		if(checkRemoteFile($link) !== true) return "<div id=\"error\">Dead Link: $link</div>";
@@ -70,7 +70,7 @@ class api{
 		else: $sql = "INSERT INTO `links` (link, shortlink, dpass) VALUES ('$link', '$short', '$apikey')";
 		endif;
 		
-		if($result = $sdb->query($sql)): return "<div id=\"success\">Shortened: <a onclick=\"copyToClipboard('http://unps.us/?$short');\" href=\"http://unps.us/?$short\" target=\"$short\">http://unps.us/?$short</a>";
+		if($result = $sdb->query($sql)): return "<div id=\"success\">Shortened: <a onclick=\"copyToClipboard('http://unps.us/$short');\" href=\"http://unps.us/$short\" target=\"$short\">http://unps.us/?$short</a>";
 		else: return '<div id="error">ERROR: ['.$sdb->error.']</div>';
 		endif;
 	}
