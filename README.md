@@ -1,6 +1,9 @@
 UnPS-Short
 ==========
 
+This project is really old and no longer maintained. Check the gama.io Organization for lobli (the current version of this software)
+This repository is here for archival purposes
+
 Link Shortener for UnPS-GAMATechnologies - located at http://unps.us
 
 This is a complete rewrite of shortv3 (which can be found at https://github.com/alopexc0de/GAMA-Site/tree/master/short), codenamed shortv4-2.
